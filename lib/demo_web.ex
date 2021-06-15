@@ -47,6 +47,10 @@ defmodule DemoWeb do
       use Phoenix.LiveView,
         layout: {DemoWeb.LayoutView, "live.html"}
 
+      # By default - authorized. Override in module for different behavior
+      def authorized?(_user_id, _params, _session), do: true
+      defoverridable authorized?: 3
+
       unquote(view_helpers())
     end
   end

@@ -1,0 +1,13 @@
+<%= case @results do %>
+  <% nil -> %>
+    <div>Generating results...</div>
+
+  <% rows -> %>
+    <div>
+      <%= for row <- rows do %>
+        <div><%= row %></div>
+      <% end %>
+    </div>
+
+<% end %>
+

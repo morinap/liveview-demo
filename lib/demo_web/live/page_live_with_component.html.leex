@@ -1,0 +1,5 @@
+<div>
+  <%= for {item, changeset} <- @items do %>
+    <%= live_component(@socket, DemoWeb.LiveComponents.LoopItem, id: item.id, item: item, changeset: changeset) %>
+  <% end %>
+</div>
